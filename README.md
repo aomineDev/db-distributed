@@ -90,13 +90,13 @@ EXEC sp_serveroption 'SQLVM', 'remote proc transaction promotion', true;
 - ctrl + r -> dcomcnfg
 - servicios de componentes -> equipos -> mi Pc -> Coordinador de transacciones distribuidas -> DTC local -> Porpiedades -> Seguridad
 - activar
-	- [x] Acceso a DTC desde la red
-	- [x] Permitir clientes remotos
+	- [X] Acceso a DTC desde la red
+	- [ ] Permitir clientes remotos
 	- [x] Permitir administracion remota
 	- [x] Permitir entrantes
-	- [x] Permitir salientes
-	- [x] No se requiere autenticación
-	- [x] Habilitar transacciones XA
+	- [X] Permitir salientes
+	- [] No se requiere autenticación
+	- [ ] Habilitar transacciones XA
 
 ## Habilitar puerto 135
 - wf.msc -> Reglas de entrada -> nueva Regla
