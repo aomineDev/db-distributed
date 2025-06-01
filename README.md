@@ -13,7 +13,7 @@
 ## Obtener Ip (host):
 - cmd -> adaptador lan wifi -> direccion ipv4
 
-## Obtener ip (vm):
+## Obtener ip (virtual machine):
 - Vm -> Cofiuracion -> red -> Adaptador 1 -> Adaptador Puente
 - cmd -> ipconfig -> adaptador ethernet -> direcion ipv4
 
