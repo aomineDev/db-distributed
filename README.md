@@ -80,10 +80,10 @@ EXEC sp_addlinkedsrvlogin
 
 ## Activar Transacciones distribuidas
 ```sql
-EXEC sp_serveroption 'SQLVM', 'rpc', true;
-EXEC sp_serveroption 'SQLVM', 'rpc out', true;
-EXEC sp_serveroption 'SQLVM', 'data access', true;
-EXEC sp_serveroption 'SQLVM', 'remote proc transaction promotion', true;
+EXEC sp_serveroption 'ServerAlias', 'rpc', true;
+EXEC sp_serveroption 'ServerAlias', 'rpc out', true;
+EXEC sp_serveroption 'ServerAlias', 'data access', true;
+EXEC sp_serveroption 'ServerAlias', 'remote proc transaction promotion', true;
 ```
 
 ## Activar MSDTC
