@@ -56,43 +56,47 @@
 
 ## Crear Server Link (Desde SSMS)
 - instancia -> objetos de servidor -> servidores vinculados -> Nuevo servidor Vinculado
-- Colocar nombre de la otra instancia o ip + puerto (x.x.x.x,puerto)
+- Colocar nombre de la otra instancia o ip (x.x.x.x)
 - Seguridad -> Se establecerán usado este context de seguridad(ultima opcion)
 - colocar credenciales de la otra instancia
 
 ## Crear Server Link
+```sql
 EXEC sp_addlinkedserver 
-@server='ServerAlias',
-@srvproduct='',
-@provider='MSOLEDBSQL',
-@datasrc='nombre de la instancia o tambien x.x.x.x,puerto'; 
+	@server='ServerAlias',
+	@srvproduct='',
+	@provider='MSOLEDBSQL',
+	@datasrc='nombre de la instancia o tambien la ip x.x.x.x'; 
 
 EXEC sp_addlinkedsrvlogin
-@rmtsrvname='ServerAlias',
-@useself='false',
-@locallogin=NULL,
-@rmtuser='usuario',
-@rmtpassword='contraseña';
+	@rmtsrvname='ServerAlias',
+	@useself='false',
+	@locallogin=NULL,
+	@rmtuser='usuario',
+	@rmtpassword='contraseña';
+```
 
 # Transacciones Distribuidas
 
 ## Activar Transacciones distribuidas
+```sql
 EXEC sp_serveroption 'SQLVM', 'rpc', true;
 EXEC sp_serveroption 'SQLVM', 'rpc out', true;
 EXEC sp_serveroption 'SQLVM', 'data access', true;
 EXEC sp_serveroption 'SQLVM', 'remote proc transaction promotion', true;
+```
 
 ## Activar MSDTC
 - ctrl + r -> dcomcnfg
 - servicios de componentes -> equipos -> mi Pc -> Coordinador de transacciones distribuidas -> DTC local -> Porpiedades -> Seguridad
 - activar
-	- Acceso a DTC desde la red
-	- Permitir clientes remotos
-	- Permitir administracion remota
-	- Permitir entrantes
-	- Permitir salientes
-	- No se requiere autenticación
-	- Habilitar transacciones XA
+	- [x] Acceso a DTC desde la red
+	- [x] Permitir clientes remotos
+	- [x] Permitir administracion remota
+	- [x] Permitir entrantes
+	- [x] Permitir salientes
+	- [x] No se requiere autenticación
+	- [x] Habilitar transacciones XA
 
 ## Habilitar puerto 135
 - wf.msc -> Reglas de entrada -> nueva Regla
@@ -105,7 +109,7 @@ EXEC sp_serveroption 'SQLVM', 'remote proc transaction promotion', true;
 - Abrir powershell como administrador
 - New-NetFirewallRule -DisplayName "MSDTC TCP 135" -Direction Inbound -Protocol TCP -LocalPort 135 -Action Allow
 
-## Habilitar DTC Firewall
+## Habilitar DTC en el Firewall
 - ctrl + r -> +wf.msc -> Reglas de entrada
 - Habilitar las reglas
 	- Coordinador de transacciones distribuidas (todas)
