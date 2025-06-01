@@ -27,7 +27,10 @@
 - server -> propiedades -> seguridad -> Modo de autenticacion de windows y sql server
 - server -> reiniciar
 - seguridad -> inicio de sesion -> sa
-- cambiar la contraseña
+- General
+	- cambiar la contraseña
+- Estado
+	- Inicio de sesion: Habilitada
 
 ## Habilitar comnuicacion de sql server
 - Abrir SQL Server Configuration Manager
