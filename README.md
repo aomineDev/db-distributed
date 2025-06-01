@@ -17,7 +17,7 @@
 - Vm -> Cofiuracion -> red -> Adaptador 1 -> Adaptador Puente
 - cmd -> ipconfig -> adaptador ethernet -> direcion ipv4
 
-## acer ping:
+## Hacer ping:
 - ambos ips tiene que ser similiares excepto el ultimo numero:
 - ip host(ejemplo): 192.168.1.x
 - ip vm(ejemplo): 192.168.1.x
