@@ -1,0 +1,1 @@
+-- CREATE DATABASE dbname COLLATE Modern_Spanish_CI_AS;
